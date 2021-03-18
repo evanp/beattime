@@ -1,25 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
 
-function App() {
-  return (
-    <div className="App">
+function beatTime(date) {
+  if (!date)
+    date = new Date();
+  let hours = (date.getUTCHours() === 23) ? 0 : date.getUTCHours() + 1;
+  let mins = date.getUTCMinutes();
+  let secs = date.getUTCSeconds();
+  return Math.abs(((((hours * 60) + mins) * 60) + secs) / 86.4);
+}
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {beats: beatTime(new Date())};
+  }
+
+  render() {
+    return <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <span data-testid="beat-time">@{this.state.beats.toFixed(2).padStart(6)}</span>
       </header>
     </div>
-  );
+  }
 }
 
 export default App;
