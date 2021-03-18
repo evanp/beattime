@@ -16,6 +16,18 @@ class App extends React.Component {
     this.state = {beats: beatTime(new Date())};
   }
 
+  componentDidMount() {
+    this.intervalId = setInterval(() => this.updateBeats(), 432)
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.intervalId)
+  }
+
+  updateBeats() {
+    this.setState({ beats: beatTime(new Date()) })
+  }
+
   render() {
     return <div className="App">
       <header className="App-header">
