@@ -22,6 +22,8 @@
   justify-content: center;
   font-size: 15vw;
   color: white;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  monospace;
 }
 
 .App-link {
