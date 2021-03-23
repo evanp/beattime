@@ -10,7 +10,7 @@ function beatTime(date) {
   return Math.abs(((((hours * 60) + mins) * 60) + secs) / 86.4)
 }
 
-test('shows current @beat time', () => {
+test('shows current .beat time', () => {
   let start = parseFloat(beatTime().toFixed(2))
   render(<BeatClock />);
   const beatTimeElement = screen.getByTestId('beat-time');
@@ -23,7 +23,7 @@ test('shows current @beat time', () => {
   expect(beatTextValue - start).toBeLessThanOrEqual(end - start)
 });
 
-test('@beat time updates automatically', done => {
+test('.beat time updates automatically', done => {
   render(<BeatClock />);
   const beatTimeElement = screen.getByTestId('beat-time');
   expect(beatTimeElement).toBeInTheDocument();
