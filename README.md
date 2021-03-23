@@ -1,6 +1,8 @@
 # beattime
 
-This is a simple client-side Web app for showing the current time in [Swatch Internet Time](https://en.wikipedia.org/wiki/Swatch_Internet_Time).
+This is a simple client-side Web app for showing the current time in [.beat time](https://en.wikipedia.org/wiki/.beat_time).
+
+It runs at [https://beatti.me/](https://beatti.me/).
 
 # LICENSE
 
